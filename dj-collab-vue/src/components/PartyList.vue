@@ -21,8 +21,9 @@ export default {
   },
   methods: {
     async getParty() {
-    var parties = await axios.get('https://localhost:8081/party');
-    this.parties.push(parties);
+    var response = await axios.get('http://localhost:8081/party');
+    var parties = await response.data;
+    this.parties = parties;
     }
   }
 };
