@@ -12,12 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+    - run: cd ./dj-collab-vue
+
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
         cache: 'npm'
-    - run: cd ./dj-collab-vue
 
     - run: npm install
     - run: npm test
