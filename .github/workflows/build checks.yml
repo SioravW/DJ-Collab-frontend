@@ -17,5 +17,7 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
+    - run: cd ./dj-collab-vue
+
     - run: npm install
     - run: npm test
