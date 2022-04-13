@@ -23,4 +23,4 @@ jobs:
         cache-dependency-path: dj-collab-vue
 
     - run: npm install
-    - run: npm build
+    - run: npm run-script build
