@@ -12,11 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./app
+        working-directory: ./dj-collab-vue
     
     steps:
     - uses: actions/checkout@v3
-    - run: cd ./dj-collab-vue
     - uses: actions/setup-node@v3
       with:
         node-version: '14'
