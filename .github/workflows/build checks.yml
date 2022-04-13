@@ -10,6 +10,9 @@ jobs:
   build-front-end:
 
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./dj-collab-vue
     
     steps:
     - uses: actions/checkout@v3
@@ -17,5 +20,7 @@ jobs:
       with:
         node-version: '14'
         cache: 'npm'
+        cache-dependency-path: dj-collab-vue
+
     - run: npm install
-    - run: npm test
+    - run: npm run-script build
