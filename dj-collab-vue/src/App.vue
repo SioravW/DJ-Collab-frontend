@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <PartyList />
+    <AddUserForm />
+    <UserList />
   </div>
 </template>
 
 <script>
-import PartyList from './components/PartyList.vue'
+import UserList from './components/UserList.vue';
+import AddUserForm from './components/AddUserForm.vue';
 
 export default {
   name: 'App',
   components: {
-    PartyList
+    AddUserForm,
+    UserList
   }
 }
 </script>
@@ -22,6 +25,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.header {
+  background: lightgray;
 }
 </style>

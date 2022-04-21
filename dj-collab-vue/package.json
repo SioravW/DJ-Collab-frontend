@@ -8,6 +8,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vaadin/button": "^23.0.6",
+    "@vaadin/crud": "^23.0.6",
+    "@vaadin/grid": "^23.0.6",
+    "@vaadin/password-field": "^23.0.6",
+    "@vaadin/text-field": "^23.0.6",
     "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
@@ -16,7 +21,9 @@
     "@vue/cli-plugin-babel": "~4.5.12",
     "@vue/cli-plugin-eslint": "~4.5.12",
     "@vue/cli-service": "~4.5.12",
+    "@webcomponents/webcomponentsjs": "^2.6.0",
     "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^10.2.4",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "vue-template-compiler": "^2.6.11"
