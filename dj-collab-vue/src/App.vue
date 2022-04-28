@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <AddUserForm />
+    <AddUserForm v-on:userAdded="userAdded" />
     <UserList v-bind:users="users" />
   </div>
 </template>
@@ -29,6 +29,11 @@ export default {
     var response = await axios.get('http://localhost:8081/user/all');
     var users = await response.data;
     this.users = users;
+    },
+    userAdded(user) {
+      console.log(user);
+      this.users = [...this.users, user]
+      console.log("updated userList: ", this.users);
     }
   }
 }

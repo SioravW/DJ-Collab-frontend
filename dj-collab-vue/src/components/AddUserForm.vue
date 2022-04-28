@@ -37,6 +37,8 @@ export default {
     var response = await axios.post('http://localhost:8081/user/', this.newUser);
     var user = await response.data;
     this.newUser = user;
+    console.log("user added and emitted: ", user)
+    this.$emit('userAdded', user);
     }
   }
 
