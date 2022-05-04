@@ -11,7 +11,7 @@ import AddUserForm from '../components/AddUserForm.vue';
 import axios from 'axios';
 
 export default {
-  name: 'App',
+  name: 'Users',
   components: {
     AddUserForm,
     UserList

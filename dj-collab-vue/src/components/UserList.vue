@@ -27,7 +27,6 @@
 
 <script>
 import vaadinGrid from '@vaadin/grid';
-//import vaadinIcon from '@vaadin/icon';
 import vaadinButton from '@vaadin/button';
 import axios from 'axios';
 
@@ -35,7 +34,6 @@ export default {
   name: 'UserList',
   components: {
     vaadinGrid,
-    //vaadinIcon,
     vaadinButton,
   },
   props: {
