@@ -2,8 +2,6 @@ FROM node:lts-alpine
 
 WORKDIR /usr/app
 
-COPY ./ /usr/app
-
 RUN npm install -g http-server
 
 COPY package*.json /usr/app
