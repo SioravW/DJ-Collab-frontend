@@ -4,11 +4,11 @@ WORKDIR /usr/app
 
 RUN npm install -g http-server
 
-COPY package*.json /usr/app
+COPY package*.json .
 
 RUN npm install
 
-COPY . /usr/app
+COPY . .
 
 RUN npm run build
 
