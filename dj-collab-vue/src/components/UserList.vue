@@ -4,6 +4,7 @@
     <vaadin-grid :items.prop='users' :selectedItem.prop="selectedItem" v-on:active-item-changed="selectedItemChanged">
       <vaadin-grid-column path="username"></vaadin-grid-column>
       <vaadin-grid-column path="password"></vaadin-grid-column>
+      <vaadin-grid-column path="id"></vaadin-grid-column>
     </vaadin-grid>
     <vaadin-button @click="editUser">Edit</vaadin-button>
     <vaadin-button @click="deleteUser">Delete</vaadin-button>
