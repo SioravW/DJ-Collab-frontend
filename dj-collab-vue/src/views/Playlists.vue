@@ -4,6 +4,7 @@
     <vaadin-grid :items.prop='playlists' :selectedItem.prop="selectedItem" v-on:active-item-changed="selectedItemChanged">
       <vaadin-grid-column path="name"></vaadin-grid-column>
       <vaadin-grid-column path="genre"></vaadin-grid-column>
+      <vaadin-grid-column path="userName"></vaadin-grid-column>
     </vaadin-grid>
     <vaadin-button @click="editPlaylist">Edit</vaadin-button>
     <vaadin-button @click="deletePlaylist">Delete</vaadin-button>
