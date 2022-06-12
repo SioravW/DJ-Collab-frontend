@@ -1,7 +1,7 @@
 <template>
-  <div id="Users">
+  <div id="users">
     <AddUserForm v-on:userAdded="userAdded" />
-    <UserList v-bind:users="users" />
+    <UserList class="grid" v-bind:users="users" />
   </div>
 </template>
 
@@ -26,7 +26,9 @@ export default {
   },
   methods: {
     async getUsers() {
-    var response = await axios.get('http://localhost:8081/user/');
+    var token = localStorage.getItem("vue-token");
+    var response = await axios.get('http://localhost:8081/user/', {headers: {
+    authorization: 'Bearer ' + token}});
     var users = await response.data;
     this.users = users;
     },
@@ -40,12 +42,13 @@ export default {
 </script>
 
 <style>
-#app {
+#users {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
 }
 
 .header {

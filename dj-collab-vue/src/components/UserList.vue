@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="grid">
     <div class="header">UserList</div>
     <vaadin-grid :items.prop='users' :selectedItem.prop="selectedItem" v-on:active-item-changed="selectedItemChanged">
       <vaadin-grid-column path="username"></vaadin-grid-column>
@@ -64,7 +64,10 @@ export default {
       this.deleteUserCall(this.selectedItem.id)
     },
     async deleteUserCall(userId) {
-      var response = await axios.delete('http://localhost:8081/user/' + userId);
+            var token = localStorage.getItem("vue-token");
+
+      var response = await axios.delete('http://localhost:8081/user/' + userId, {headers: {
+        authorization: 'Bearer ' + token}});
       var deleted = await response.data;
       this.deleted = deleted;
       if(deleted){
@@ -72,7 +75,9 @@ export default {
       }
     },
     async UpdateUser() {
-      var response = await axios.put('http://localhost:8081/user/' + this.selectedItem.id, this.selectedItem);
+      var token = localStorage.getItem("vue-token");
+      var response = await axios.put('http://localhost:8081/user/' + this.selectedItem.id, this.selectedItem, {headers: {
+        authorization: 'Bearer ' + token}});
       var user = await response.data;
       this.selectedItem = user;
       this.editing = false;
@@ -99,5 +104,13 @@ li {
 }
 a {
   color: #42b983;
+}
+
+vaadin-grid {
+  height: 600px;
+}
+
+.grid {
+  height: 100%;
 }
 </style>

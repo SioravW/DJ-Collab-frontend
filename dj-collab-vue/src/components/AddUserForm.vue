@@ -34,11 +34,13 @@ export default {
   },  
   methods: {
     async addUser() {
-    var response = await axios.post('http://localhost:8081/user/', this.newUser);
-    var user = await response.data;
-    this.newUser = user;
-    console.log("user added and emitted: ", user)
-    this.$emit('userAdded', user);
+      var token = localStorage.getItem("vue-token");
+      var response = await axios.post('http://localhost:8081/user/', this.newUser, {headers: {
+    authorization: 'Bearer ' + token}});
+      var user = await response.data;
+      this.newUser = user;
+      console.log("user added and emitted: ", user)
+      this.$emit('userAdded', user);
     }
   }
 

@@ -32,8 +32,10 @@ export default {
   },  
   methods: {
     async addPlaylist() {
+      var token = localStorage.getItem("vue-token");
       this.newPlaylist.genre = this.newPlaylist.genre.toUpperCase();
-      var response = await axios.post('http://localhost:8082/playlist/', this.newPlaylist);
+      var response = await axios.post('http://localhost:8082/playlist/', this.newPlaylist, {headers: {
+    authorization: 'Bearer ' + token}});
       var playlist = await response.data;
       this.newPlaylist = playlist;
       console.log("playlist added and emitted: ", playlist)

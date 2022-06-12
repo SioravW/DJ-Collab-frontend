@@ -54,7 +54,9 @@ export default {
       this.selectedItem = item.detail.value;
     },
     async getPlaylists(){
-      var response = await axios.get('http://localhost:8082/playlist');
+      var token = localStorage.getItem("vue-token");
+      var response = await axios.get('http://localhost:8082/playlist', {headers: {
+    authorization: 'Bearer ' + token}});
       var playlists = await response.data;
       this.playlists = playlists;
     },
